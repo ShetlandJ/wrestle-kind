@@ -1,0 +1,80 @@
+@charset "UTF-8";
+@import 'utils';
+
+// MAP
+
+.map {
+	.hospital-list {
+		h1,h2,h3,h4,h5 {
+			text-align: center;
+			@include display-font(darken($text-color,10%));
+			@include responsive-font(4vw, 26px, 38px);
+			margin: $u*2 0 $u*3;
+		}
+		ul {
+			list-style: none;
+			margin: 0 -0.5%;
+			padding: 0;
+			@include flex();
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: stretch;
+			li {
+				display: block;
+				padding: $u*2;
+				@include box-sizing(border-box);
+				width: 32.333333%;
+				background-color: lighten($blue,34%);
+				margin: 0 0.5% $u;
+				text-align: center;
+			}
+		}
+		@media (max-width: $tablet-width) {
+			ul {
+				li {
+					width: 49%;
+				}
+			}
+		}
+		@media (max-width: $mobile-width) {
+			margin-bottom: $u*2;
+			h1,h2,h3,h4,h5 {
+				margin: $u*1.5 0 $u*2;
+			}
+			ul {
+				li {
+					width: 100%;
+					margin-bottom: $u*0.5;
+					padding: $u*1.5;
+				}
+			}
+		}
+	}
+	.section--map {
+		padding-bottom: $u*6;
+		h1 {
+			text-align: center;
+			@include display-font();
+			@include responsive-font(5vw, 36px, 54px);
+			margin: 0 0 $u*3;
+		}
+		background-color: lighten($blue,34%);
+		border-top: solid $u*0.5 lighten($blue,28%);
+		border-bottom: solid $u*0.5 lighten($blue,28%);
+		iframe {
+			@include box-shadow(lighten($blue,28%));
+			display: block;
+		}
+		@media (max-width: $tablet-width) {
+			padding-bottom: $u*5;
+			iframe {
+				width: 85%;
+				margin: 0 auto;
+			}
+		}
+		@media (max-width: $mobile-width) {
+				display: none;
+		}
+	}	
+}

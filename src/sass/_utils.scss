@@ -1,0 +1,105 @@
+$brand-primary:    #fc5e26;
+
+$white: 				   #fff;
+$grey-light:			 #f1f1f1;
+$grey:					   #d8d8d8;
+$dark-grey: 			 #353535;
+$orange: 				   #F5A623;
+$blue: 					   #4A6DF7;
+$yellow:				   #FAC84C;
+$yellow-light:     #FDE599;
+$green:            #51AC20;
+$red:              #FFEAED;
+
+$body-bg:                  #fff !default;
+$text-color:               #555 !default;
+
+$u:					            10px;
+
+$font-size-base:        20px;
+$grid-gutter-width: 	  18px;
+
+$max-width:				  $u*100;
+$tablet-width: 			$u*78;
+$mobile-width: 			$u*58;
+
+$display-font: 			"jaf-domus", 'arial narrow', sans-serif;
+$body-font: 			  "effra",sans-serif;;
+
+$link-color:            $brand-primary !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+
+$vendors: -moz- -webkit- -ms- -o-;
+
+@mixin prefix($attr,$value){
+	@each $vendor in $vendors {
+		#{$vendor}#{$attr}: $value;
+	}
+	#{$attr}: $value;
+}
+
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+  
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+    
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+  
+  @if $fallback {
+    font-size: $fallback;
+  }
+  
+  font-size: $responsive;
+}
+
+@mixin wrap($size: $u*2, $bg: $white){
+	padding: $size;
+	background-color: $bg;
+}
+
+@mixin display-font($color: $blue){
+	font-family: $display-font;
+	.js & {
+		color: transparent;
+	}
+	.js.wf-jafdomus-n7-active & {
+		color: $color;
+	}
+}
+
+@mixin box-shadow($color: $yellow, $top: $u/2, $left: $u/2, $blur: 0, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin flex(){
+	display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+	display: -moz-box;      /* OLD: Firefox (buggy) */
+	display: -ms-flexbox;   /* MID: IE 10 */
+	display: -webkit-flex;  /* NEW, Chrome 21–28, Safari 6.1+ */
+	display: flex;          /* NEW: IE11, Chrome 29+, Opera 12.1+, Firefox 22+ */
+	align-items: center;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}

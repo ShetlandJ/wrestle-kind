@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import 'utils';
+
+.donate-box {
+	background-color: lighten($blue,34%);
+	padding: $u*2;
+	@include flex();
+	justify-content: space-between;
+	margin-bottom: $u*3;
+	img {
+		flex: 1;
+		max-width: $u*17;
+		margin-right: $u;
+		@media (max-width: $mobile-width) {
+			max-width: $u*10;
+		}
+	}
+	.donate-btn {
+		flex: 1;
+		text-align: right;
+	}
+}

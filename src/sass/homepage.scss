@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import 'utils';
+
+// HOMEPAGE
+
+.homepage__header {
+	padding-bottom: 7%;
+	.container {
+		position: relative;
+		padding-top: $u*3;
+		padding-bottom: $u*3;
+		margin: $u*3 auto 0;
+		@media (max-width: $mobile-width) {
+			padding-top: $u*2;
+			padding-bottom: $u*2;
+			margin: auto;
+		}
+	}
+	@media (min-width: 1280px) {
+		padding-bottom: 89.6px;
+	}
+}
+
+.homepage__header__content {
+	width: 48.5%;
+	position: relative;
+	z-index: 2;
+	@include box-shadow();
+	.wrap {
+		@include wrap($u*3);
+	}
+	h1 {
+		@include display-font(darken($yellow,15%));
+		@include responsive-font(5vw, 36px, 64px);
+		line-height: 1em;
+		margin: 0;
+	}
+	p {
+		margin: $u*2 0;
+	}
+	.btn.btn--large {
+		@include responsive-font(3vw, 18px, 22px);
+	}
+	@media (max-width: $mobile-width) {
+		width: auto;
+		.wrap {
+			@include wrap($u*2);
+		}
+	}
+}
+
+.homepage__header__image {
+	width: 57%;
+	position: absolute;
+	top: 0;
+	right: $u*2;
+	bottom: 0;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	@include box-shadow();
+	img {
+		display: none;
+	}
+	@media (max-width: $mobile-width) {
+		display: none;
+	}
+}
+
+.homepage__intro {
+	padding: $u*4 0 $u*2;
+	@media (max-width: $tablet-width) {
+		padding: $u*4 0 $u*3;
+	}
+	@media (max-width: $mobile-width) {
+		padding: $u*3 0 $u*2;
+		.section__sidebar {
+			margin-top: $u*3;
+		}
+	}
+}
+
+.homepage__stories {
+	background-color: lighten($blue,34%);
+	border-top: solid $u*0.5 lighten($blue,28%);
+	border-bottom: solid $u*0.5 lighten($blue,28%);
+	h1 {
+		text-align: center;
+		@include display-font(darken($yellow,15%));
+		@include responsive-font(5vw, 36px, 54px);
+		margin: 0 0 $u*3;
+	}
+	.stories__story {
+		.wrap {
+			background-color: white;
+			@include box-shadow(lighten($blue,28%));
+		}
+		h2 {
+			@include display-font($blue);
+			@include responsive-font(3vw, 20px, 26px);
+		}
+		h2, p {
+			margin: 0 0 $u;
+		}
+		.date {
+			font-style: italic;
+			color: lighten($text-color,20%);
+		}
+	}
+	.more-stories {
+		text-align: center;
+		margin: $u*4 0 $u*1;
+	}
+	@media (max-width: $tablet-width) {
+		h1 {
+			margin: 0 0 $u*3;
+		}
+	}
+	@media (max-width: $mobile-width) {
+		h1 {
+			text-align: left;
+			margin: 0 0 $u*2;
+		}
+		.more-stories {
+			margin-top: $u*3;
+		}
+	}
+}
+
+.sidebar__item--mail-list {
+	margin-bottom: $u*3;
+}

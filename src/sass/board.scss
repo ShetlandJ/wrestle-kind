@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@import 'utils';
+
+// Board
+.board-list {
+	margin-bottom: $u*2;
+	.column {
+		.wrap {
+			padding: $u*2 $u 0;
+		}
+		.column__image {
+			margin: (-$u*2) (-$u) $u*2.5;
+			@include box-shadow(lighten($blue,28%));
+		}
+		h2 {
+			@include display-font($dark-grey);
+			@include responsive-font(3vw, 20px, 26px);
+		}
+		p {
+			margin: 0;
+		}
+	}
+}
+

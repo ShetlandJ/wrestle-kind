@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="257px" viewBox="0 0 1440 257" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="path-1" x="0" y="-4.75855331e-14" width="1440" height="257"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.000000, -120.000000)">
+            <g transform="translate(0.000000, 120.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Rectangle-14" fill="#F9BE00" style="mix-blend-mode: multiply;" opacity="0.900000036" xlink:href="#path-1"></use>
+                <path d="M-97,173 C103,169 76,223.582936 248,233 C420,242.417064 951,229.361637 1104,211.361637 C1257,193.361637 1377,162 1466,173 C1555,184 1487,328 1487,328 L-133,299.361637 C-133,299.361637 -297,177 -97,173 Z" id="Path-2" fill="#FAC519" style="mix-blend-mode: multiply;" opacity="0.300000012" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
