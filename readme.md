@@ -22,4 +22,4 @@ cd to `src` and run the following:
 
 ### Development
 
-    gulp watch #or just 'gulp styles' to compile them
+    gulp watch or just 'gulp styles' to compile them
